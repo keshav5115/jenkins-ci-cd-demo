@@ -36,6 +36,17 @@ pipeline {
                 '''
             }
         }
+        stage('Deploy') {
+            steps {
+                sh '''
+            docker rm -f jenkins-demo || true
+            docker run -d \
+                --name jenkins-demo \
+                -p 5000:5000 \
+                jenkins-demo:latest
+        '''
+            }
+        }
     }
 
     post {
