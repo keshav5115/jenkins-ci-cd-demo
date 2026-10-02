@@ -6,7 +6,7 @@ def test_home():
     response = client.get("/")
 
     assert response.status_code == 200
-    assert response.data == b"Hello from Jenkins CI/CD!"
+    assert response.data == b"Hello from Keshavareddy - Auto Deployed! Congrats!!!"
 
 
 def test_health():
